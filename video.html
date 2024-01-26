@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>volume test</title>
+</head>
+<body>
+<ul>
+  <li>muted: <span id="muted"></span></li>
+  <li>volume: <span id="volume"></span></li>
+</ul>
+<video id="theVideo">
+  <source
+    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    type="video/mp4"
+  >
+</video>
+<script>
+  const videoElement = document.getElementById("theVideo");
+  setInterval(() => {
+    document.getElementById("muted").innerText = videoElement.muted ? "true" : "false";
+    document.getElementById("volume").innerText = videoElement.volume + "";
+  }, 1000);
+</script>
+</body>
+</html>
